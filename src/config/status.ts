@@ -3,5 +3,6 @@ export default {
     unAuthorized: 401,
     badRequest: 400,
     success: 200,
-    created: 201
+    created: 201,
+    notFound: 404
 }

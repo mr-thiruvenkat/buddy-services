@@ -1,11 +1,8 @@
 import { Router } from "express";
+import { loginUser } from "../../../controllers/auth.controller.js";
 
 const authRouter = Router();
 
-authRouter.get("/login", (req, res) => {
-    res.json({
-        message: "V1 login API",
-    });
-});
+authRouter.get("/login", loginUser);
 
 export default authRouter;

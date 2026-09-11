@@ -1,15 +1,14 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { authenticator } from "../../../middleware/middleware.js";
+import { getAllUser, getUser } from "../../../controllers/user.controller.js";
 
 const userRouter = Router();
 userRouter.use(authenticator);
 
-userRouter.get("/", (req: Request, res: Response) => {
-    res.json({ data: { user: "User API" } });
-});
+userRouter.get("/me", getUser);
 
-userRouter.get("/all", (req: Request, res: Response) => {
-    res.json({ data: { user: ["All Users"] } });
-});
+userRouter.get("/find-user", getUser);
+
+userRouter.get("/all", getAllUser);
 
 export default userRouter;
